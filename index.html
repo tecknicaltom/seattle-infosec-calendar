@@ -8,6 +8,11 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
 
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+
     <style>
 .desk {
   display: block;
@@ -25,6 +30,54 @@
 }
     </style>
 
+    <script>
+        $(function() {
+            var calendars = [
+
+                // my curated events
+                "seattle.infosec.calendar@gmail.com",
+
+                // Events - The OWASP Seattle Chapter
+                // from webcal://www.meetup.com/Seattle-Open-Web-Application-Security-Project-OWASP-Chapter/events/ical/
+                "fc6vafph9a3s3qgkfbgd40armjd65ltk@import.calendar.google.com",
+
+                // https://neg9.org/feeds/meetings/seattle.ics
+                "qqn24ngdl5oj2r8538lq7ffuv72q9ase@import.calendar.google.com",
+
+                // Black Lodge Research public calendar
+                "calendar@blacklodgeresearch.org",
+
+                // Events - Seattle Lockpicking and Locksport
+                // from https://www.meetup.com/Seattle-Lockpicking/events/ical/
+                "dkt0uenht93o8ibid3lggp85uo1jq03j@import.calendar.google.com",
+
+                // was "Seattle Web Security Meetup" from https://www.meetup.com/Seattle-Web-Security-Meetup/
+                // appears to be dead
+                //"9djn6urq9vvdtaick6lajf5oqbu1hnmc@import.calendar.google.com",
+
+                // Events - InfoSec Happy Hour
+                // from https://www.meetup.com/infosec-happyhour/events/ical/
+                "tc1d7oq1cebbi16q4m7l8n1opv1mlf27@import.calendar.google.com",
+
+                // Events - SEASec East - Information Security Meetup
+                // from https://www.meetup.com/SEASec-East/events/ical/
+                "l4rttevusnc0856drq78j1plf4tfb5iu@import.calendar.google.com",
+
+                // Events - TA3M Seattle
+                // from https://www.meetup.com/TA3M-SEA/events/ical
+                "akkcffvrdm4ddk9pdgaog77hrlgj83rm@import.calendar.google.com",
+
+                // Events - West Seattle LUG
+                // from https://www.meetup.com/WSeaLUG/events/ical/
+                "62heldg7n34205b6sg9urci6o8kj7d92@import.calendar.google.com",
+            ];
+
+            var iframe_url = "https://www.google.com/calendar/embed?showTitle=0&bgcolor=%23b5e853&utz=America/Los_Angeles&" +
+                calendars.map(id => "src=" + id).join("&");
+            $('.desk iframe').attr('src', iframe_url);
+            $('.phone iframe').attr('src', iframe_url + "&mode=AGENDA");
+        });
+    </script>
     <title>Seattle Infosec Calendar</title>
   </head>
 
@@ -42,10 +95,10 @@
       <section id="main_content">
 
         <div class="desk">
-          <iframe src="https://www.google.com/calendar/embed?src=seattle.infosec.calendar%40gmail.com&showTitle=0&bgcolor=%23b5e853&utz=America/Los_Angeles&src=fc6vafph9a3s3qgkfbgd40armjd65ltk%40import.calendar.google.com&src=qqn24ngdl5oj2r8538lq7ffuv72q9ase%40import.calendar.google.com&src=calendar%40blacklodgeresearch.org&src=dkt0uenht93o8ibid3lggp85uo1jq03j%40import.calendar.google.com&src=9djn6urq9vvdtaick6lajf5oqbu1hnmc@import.calendar.google.com&src=tc1d7oq1cebbi16q4m7l8n1opv1mlf27@import.calendar.google.com&src=l4rttevusnc0856drq78j1plf4tfb5iu@import.calendar.google.com&src=akkcffvrdm4ddk9pdgaog77hrlgj83rm%40import.calendar.google.com" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+          <iframe style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
         </div>
         <div class="phone">
-          <iframe src="https://www.google.com/calendar/embed?mode=AGENDA&src=seattle.infosec.calendar%40gmail.com&showTitle=0&bgcolor=%23b5e853&utz=America/Los_Angeles&src=fc6vafph9a3s3qgkfbgd40armjd65ltk%40import.calendar.google.com&src=qqn24ngdl5oj2r8538lq7ffuv72q9ase%40import.calendar.google.com&src=calendar%40blacklodgeresearch.org&src=dkt0uenht93o8ibid3lggp85uo1jq03j%40import.calendar.google.com&src=9djn6urq9vvdtaick6lajf5oqbu1hnmc@import.calendar.google.com&src=tc1d7oq1cebbi16q4m7l8n1opv1mlf27@import.calendar.google.com&src=l4rttevusnc0856drq78j1plf4tfb5iu@import.calendar.google.com&src=akkcffvrdm4ddk9pdgaog77hrlgj83rm%40import.calendar.google.com" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+          <iframe style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
         </div>
 
 <p>Inspired by the (now defunct) SeattleTechCalendar this calendar is for events in the Seattle area geared towards those in the infosec professions and hacker communities.</p>
