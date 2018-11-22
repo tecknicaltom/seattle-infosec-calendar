@@ -43,9 +43,9 @@ iframe {
     -o-transform-origin: 0 0;
     -webkit-transform: scale(2.0);
     -webkit-transform-origin: 0 0;
-    margin-bottom: 300px;
+    margin-bottom: 400px;
     width: 50%;
-    height: 300px;
+    height: 400px;
 }
     </style>
 
@@ -91,7 +91,7 @@ iframe {
                 "62heldg7n34205b6sg9urci6o8kj7d92@import.calendar.google.com",
             ];
 
-            var iframe_url = "https://www.google.com/calendar/embed?showTitle=0&showPrint=0&bgcolor=%23b5e853&utz=America/Los_Angeles&" +
+            var iframe_url = "https://www.google.com/calendar/embed?showTitle=0&showPrint=0&showTz=0&bgcolor=%23b5e853&utz=America/Los_Angeles&" +
                 calendars.map(id => "src=" + id).join("&");
             $('.desk iframe').attr('src', iframe_url);
             $('.phone iframe').attr('src', iframe_url + "&mode=AGENDA");
